@@ -45,6 +45,20 @@
             </div>
         </div>
     </div>
-    <?php include("component/footer.php")?>
+    <?php
+    if(isset($_GET['register'])&&$_GET['register']=='success'){
+    echo '
+        <script type="text/javascript">
+        
+        $(document).ready(function(){
+        
+          swal("สมัครสมาชิกเรียบร้อย","", "success");
+        });
+        
+        </script>
+        ';
+    }
+    
+    include("component/footer.php")?>
   </body>
 </html>

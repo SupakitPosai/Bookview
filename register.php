@@ -28,26 +28,28 @@
             <div class="row p-5">
                 <div class="col-12 p-5">
                     <div class="card-login">
-                        <h4 class="text-center">ลงทะเบียนสมาชิกใหม่</h4>
-                        <label>ชื้อผู้ใช้</label>
-                        <input type="text" class="form-control mb-2"/>
-                        <label>รหัสผ่าน</label>
-                        <input type="text" class="form-control mb-2"/>
-                        <div class="row">
-                            <div class="col-6">
-                                <label>ชื่อ</label>
-                                <input type="text" class="form-control mb-2"/>
-                            </div>
-                            <div class="col-6">
-                                <label>สกุล</label>
-                                <input type="text" class="form-control mb-2"/>
-                            </div>
-                        </div>
-                        <label>อีเมล</label>
-                        <input type="text" class="form-control mb-2"/>
-                        <label>เบอร์โทร</label>
-                        <input type="text" class="form-control mb-4"/>
-                        <button type="button" class="btn btn-book w-100 mb-2" >สมัครสมาชิก</button>
+                      <form action="/bookview/function/fn_register.php" method="post">
+                          <h4 class="text-center">ลงทะเบียนสมาชิกใหม่</h4>
+                          <label>ชื้อผู้ใช้<span class="text-danger">*</span></label>
+                          <input type="text" class="form-control mb-2" required name="username"/>
+                          <label>รหัสผ่าน<span class="text-danger">*</span></label>
+                          <input type="password" class="form-control mb-2" required name="password"/>
+                          <div class="row">
+                              <div class="col-6">
+                                  <label>ชื่อ<span class="text-danger">*</span></label>
+                                  <input type="text" class="form-control mb-2" required name="first_name"/>
+                              </div>
+                              <div class="col-6">
+                                  <label>สกุล<span class="text-danger">*</span></label>
+                                  <input type="text" class="form-control mb-2" required name="last_name"/>
+                              </div>
+                          </div>
+                          <label>อีเมล<span class="text-danger">*</span></label>
+                          <input type="text" class="form-control mb-2" required name="email"/>
+                          <label>เบอร์โทร<span class="text-danger">*</span></label>
+                          <input type="text" class="form-control mb-4" required name="phone"/>
+                          <button type="submit" class="btn btn-book w-100 mb-2" >สมัครสมาชิก</button>
+                      </form>
                     </div>
                 </div>
             </div>
