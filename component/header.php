@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap"
       rel="stylesheet"
@@ -26,7 +28,7 @@
     <nav id="nav1" class="navbar navbar-expand-md book-nav fixed-top ">
       <div class="container">
         <div class="row w-100">
-          <div class="col-2">
+          <div class="col-2 align-items-center d-flex">
             <a class="navbar-brand" href="/bookview">Bookview Logo</a>
           </div>
           <div class="col-6 d-flex align-items-center px-0">
@@ -55,7 +57,31 @@
           <div class="col-4 d-flex align-items-center px-0 justify-content-end">
             <ul class="navbar-nav">
               <li id="navlogin" class="nav-item">
-                <a class="nav-link" href="/bookview/login.php"><i class="fas fa-user mr-2"></i>เข้าสู่ระบบ</a>
+              <?php if(!isset($_SESSION['user_id'])) {
+                      echo'<a class="nav-link" href="/bookview/login.php"><i class="fas fa-user mr-2"></i>เข้าสู่ระบบ</a>';
+                    }else {
+                        if(isset($_SESSION['profile'])){
+                          $pro="
+                          <div class='image-cropper border-0 profile mr-2'>
+                              <img src='{$_SESSION['profile']}' class='rounded' />
+                          </div>";
+                        }else {
+                          $pro="<div class='image-cropper border-0 profile mr-2'>
+                              <img src='/bookview/images/icon_user.png' class='rounded' />
+                          </div>";
+                        }
+                      echo"<div class='dropdown'>
+                        <button type='button' class='btn  dropdown-toggle d-flex align-items-center' data-toggle='dropdown'>".$pro."
+                      {$_SESSION['name']}
+                      </button>
+                      <div class='dropdown-menu'>
+                        <a class='dropdown-item' href='#'>จัดการข้อมูลส่วนตัว</a>
+                        <a class='dropdown-item' href='/bookview/function/fn_logout.php'>ออกจากระบบ</a>
+                      </div>
+                    </div>";
+                    }
+              ?>
+                
               </li>
             </ul>
           </div>

@@ -67,16 +67,36 @@ a:hover,a:focus{
     box-shadow: unset;
     border: 2px #eeeeee solid;
 }
+label{
+    margin-top: 5px;
+}
 .btn-book{
     background-color: #E9C869;
     color: #fff;
     border-radius: 8px;
+    border: 2px solid #E9C869;
 }
 .btn-book:hover{
     color: #fff;
     background-color: #cfb051;
+    border: 2px solid #cfb051;
 }
 .btn-book:focus{
+    outline: unset;
+    box-shadow: unset;
+}
+.btn-book-outline{
+    background-color:#fff ;
+    color:#E9C869 ;
+    border-radius: 8px;
+    border: 2px solid #E9C869;
+}
+.btn-book-outline:hover{
+    color: #fff;
+    background-color: #cfb051;
+    border: 2px solid #cfb051;
+}
+.btn-book-outline:focus{
     outline: unset;
     box-shadow: unset;
 }
@@ -87,6 +107,9 @@ a:hover,a:focus{
 }
 .text-book-y-b{
   color: #d6ab2e;  
+}
+.text-book{
+    color:#E9C869;
 }
 .book-card {
     
@@ -254,4 +277,73 @@ img {
     background-color: #fff;
     padding: 1rem 2rem;
 }
+.btn.focus, .btn:focus {
+    outline: unset !important;
+    box-shadow: unset !important;
+}
+.image-cropper.profile{
+    width: 40px;
+    height: 40px;
+}
+.layout{
+    background-color: #eeeeee;
+    padding-left: 280px;
+    padding-top: 2.5rem;
+    min-height: 100vh;
+    width: 100%;
+}
+nav .slide-nav{
+    width: 280px;
+    background-color: #fff;
+    height: 100vh;
+    position: fixed;
+}
+.slide-nav-head.logout{
+    position: absolute;
+    bottom: 0;
+    width: 280px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.slide-nav-head{
+    padding: 1rem 1.2rem 1rem 1.2rem ;
+}
+.slide-nav-head:hover,.slide-nav-head.active{
+    background-color: #E9C869;
+    color: #fff;
+    border-color: #E9C869;
+}
+
+a:hover {
+    text-decoration: unset;
+}
+.slide-nav-admin{
+    padding: 1rem 1.2rem 1rem 1.2rem ;
+    text-transform: uppercase;
+
+}
+.box-manage{
+    background-color: #fff;
+    border-radius: 8px;
+    width: 100%;
+    min-height: 500px;
+    padding: 1rem;
+}
+.img-uploaad{
+    margin-top: 1rem;
+    width: 100px;
+}
+.img-cate{
+    width: 70px;
+    height: 70px;
+}
+.abcRioButtonLightBlue{
+    width: 100% !important;
+}
+.abcRioButtonContentWrapper{
+    display: flex !important;
+    justify-content: center !important;
+}
+.abcRioButton:hover {
   
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.25) !important;
+}
