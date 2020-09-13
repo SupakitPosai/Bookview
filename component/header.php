@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php  session_start();?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    
+    <script src="/bookview/function/function.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap"
       rel="stylesheet"
@@ -55,9 +55,12 @@
             </div>
           </div>
           <div class="col-4 d-flex align-items-center px-0 justify-content-end">
+            
             <ul class="navbar-nav">
               <li id="navlogin" class="nav-item">
-              <?php if(!isset($_SESSION['user_id'])) {
+              <?php
+                   
+                    if(!isset($_SESSION['user_id'])) {
                       echo'<a class="nav-link" href="/bookview/login.php"><i class="fas fa-user mr-2"></i>เข้าสู่ระบบ</a>';
                     }else {
                         if(isset($_SESSION['profile'])){
@@ -75,7 +78,9 @@
                       {$_SESSION['name']}
                       </button>
                       <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='#'>จัดการข้อมูลส่วนตัว</a>
+
+                        <a class='dropdown-item' href='/bookview/profile.php'>จัดการข้อมูลส่วนตัว</a>
+                        <a class='dropdown-item' href='/bookview/order.php'>รายการยืม/คืน</a>
                         <a class='dropdown-item' href='/bookview/function/fn_logout.php'>ออกจากระบบ</a>
                       </div>
                     </div>";
@@ -84,8 +89,25 @@
                 
               </li>
             </ul>
+            <a class="ml-3" href="/bookview/cart.php">
+                <i class="fas fa-shopping-cart"></i>
+                (<?php 
+                    if(isset($_SESSION['cart'])){
+                        $numall = 0;
+                        for ($x = 0; $x < count($_SESSION['cart']); $x++) {
+
+                            $numall += $_SESSION['cart'][$x]['num'];
+                                
+                        }
+                            echo   $numall;
+                    }else{
+                        echo "0";
+                    }
+                ?>)
+            </a>
           </div>
         </div>
+        
       </div>
     </nav>
     <script>

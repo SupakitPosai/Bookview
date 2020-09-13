@@ -3,7 +3,7 @@ include "db_config.php";
 if (isset($_GET['id'])) {
   $sql = "SELECT * FROM user WHERE id_google='{$_GET['id']}' ";
   $result = $conn->query($sql);
-   mysqli_close($conn);
+  
   if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
     if($result2){
       $sql = "SELECT * FROM user WHERE id_google='{$_GET['id']}' ";
       $result = $conn->query($sql);
-      mysqli_close($conn);
+   
       if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
@@ -46,5 +46,6 @@ if (isset($_GET['id'])) {
     echo "</script>";
     }
   }
+  mysqli_close($conn);
 }
 ?>

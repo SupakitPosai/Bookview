@@ -13,12 +13,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     VALUES ('{$username}','{$password}','{$first_name}', '{$last_name}', '{$email}','{$phone}','{$type}')";
     echo "dasds".$sqlinsert;
     if ($conn->query($sqlinsert) === TRUE) {
-    echo "New record created successfully";
-    
-    header('Location:/bookview/login.php?register=success');
+        echo "New record created successfully";
+        
+        header('Location:/bookview/login.php?register=success');
     
     } else {
-    echo "Error: " . $sqlinsert . "<br>" . mysqli_error($conn);
+        echo "Error: " . $sqlinsert . "<br>" . mysqli_error($conn);
     }
 }
 

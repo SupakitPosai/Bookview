@@ -40,6 +40,8 @@ if(!isset($_SESSION['user_id'])){
             <a href="/bookview/manage_book.php"><div class="slide-nav-head" id="nav-book"><i class="fas fa-book mr-2"></i>จัดการหนังสือ</div></a>
             <a href="/bookview/manage_review.php"><div class="slide-nav-head" id="nav-review"><i class="fas fa-book-reader mr-2"></i>จัดการข้อมูลรีวิวหนังสือ</div></a>
             <a href="/bookview/manage_booking.php"><div class="slide-nav-head" id="nav-booking"><i class="fas fa-calendar-alt mr-2"></i>จัดการข้อมูล ยืม/คืน</div></a>
+            <a href="/bookview/manage_chat.php"><div class="slide-nav-head" id="nav-chat"> <i class="far fa-comment mr-2"></i>ข้อความ</div></a>
+            <a href="/bookview/manage_chat_bot.php"><div class="slide-nav-head" id="nav-chat-bot"><i class="fas fa-comment-dots  mr-2"></i>ข้อความตอบกลับอัตโนมัต</div></a>
             <a href="/bookview/function/fn_logout.php"><div class="slide-nav-head logout"><i class="fas fa-sign-out-alt mr-2"></i>ออกจากระบบ</div></a>
         </div>
     </nav>
@@ -56,6 +58,18 @@ if(!isset($_SESSION['user_id'])){
       }
       if (patname[2]=="manage_review.php") {
         var elementnav = document.getElementById('nav-review');
+        elementnav.classList.add("active");
+      }
+      if (patname[2]=="manage_booking.php") {
+        var elementnav = document.getElementById('nav-booking');
+        elementnav.classList.add("active");
+      }
+      if (patname[2]=="manage_chat.php") {
+        var elementnav = document.getElementById('nav-chat');
+        elementnav.classList.add("active");
+      }
+      if (patname[2]=="manage_chat_bot.php") {
+        var elementnav = document.getElementById('nav-chat-bot');
         elementnav.classList.add("active");
       }
       </script>

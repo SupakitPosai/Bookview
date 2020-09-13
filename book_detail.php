@@ -68,6 +68,7 @@ session_start();
                                       <hr/>
                                       <h4 class='mb-3'>เรื่องย่อ</h4>
                                       <p class='dication'>{$row["resume"]}</p>
+                                      <a  class='btn btn-book w-100 ' href='/bookview/function/fn_cart.php?id_book={$id_book}&add=1' >ยืมหนังสือ</a>
                                   </div>
                               </div>";
                     }
@@ -161,5 +162,6 @@ session_start();
 
     </div>
 <?php include("component/footer.php")?>
+
      </body>
 </html>
