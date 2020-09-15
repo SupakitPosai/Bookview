@@ -55,12 +55,12 @@ session_start();
                     if (mysqli_num_rows($result) > 0) {
                     // output data of each row
                     while($row = mysqli_fetch_assoc($result)) {
-                        echo "<div class='col-7'>
+                        echo "<div class='col-12 col-lg-7 mb-3'>
                                   <div class='book-detail-img'>
                                       <img src='/bookview/upload/{$row["image_book"]}'/>
                                   </div>
                               </div>
-                              <div class='col-5 '>
+                              <div class='col-12 col-lg-5 mb-3'>
                                   <div class='book-detail-txt p-4'>
                                       <h4 class='mb-3'>รายละเอียด</h4>
                                       <p>ชื่อหนังสือ : {$row["name_book"]}</p>
@@ -81,8 +81,8 @@ session_start();
         
       </div>
       <hr/>
-      <div class="row pl-5 pr-5 py-2">
-          <div class="col-12 pl-5 pr-5">
+      <div class="row p-3 pl-lg-5 pr-lg-5 py-lg-2">
+          <div class="col-12 p-0 pl-lg-5 pr-lg-5">
             <div class="book-review">
                 <div class="book-comment">
                    <h5>เขียนรีวิว</h5> 
@@ -108,8 +108,8 @@ session_start();
                     $result = mysqli_query($conn, $sql);
                     if (mysqli_num_rows($result) > 0) {
                     while($row = mysqli_fetch_assoc($result)) {
-                        echo "<div class='row mt-4 pl-5 pr-5'>
-                        <div class='col-12 pl-5 pr-5 '>
+                        echo "<div class='row mt-4 p-3 px-lg-5 '>
+                        <div class='col-12 p-0 pl-lg-5 pr-lg-5 '>
                             
                             <div class='review-item d-flex'>";
                             if(isset($row['profile'])){

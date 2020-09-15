@@ -1,0 +1,27 @@
+@media (max-width: 768px) {
+
+    .card-login{
+        padding: 2rem;
+        padding-bottom: 2.5rem;
+    }
+}
+@media (max-width: 576px) {
+
+    .book-card__cover{
+        height: 200px;
+    }
+}
+@media (max-width: 400px) {
+
+    .book-card__cover{
+        height: 150px;
+    }
+
+}
+@media (max-width: 350px) {
+
+    .book-card__cover{
+        height: 100px;
+    }
+    
+}

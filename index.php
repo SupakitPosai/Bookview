@@ -53,17 +53,17 @@
       <div class="position-absolute box-bg"></div>
       <div class="container">
         <div class="row pt-5 mb-2">
-          <div class="col-4"></div>
-          <div class="col-4">
+          <div class="col-2"></div>
+          <div class="col-8">
             <div class="text-center"><h2 class="text-white">หนังสือแนะนำ</h2></div>
           </div>
-          <div class="col-4">
+          <div class="col-2">
           </div>
         </div>
       </div>
     </div>
     <div class="container my-5">
-      <div class="row">
+      <div class="row ">
         
         <?php 
           include "function/db_config.php";
@@ -71,7 +71,7 @@
           FROM book WHERE status='1' LIMIT 4" or die("Error:" . mysqli_error()); 
           $result2 = mysqli_query($conn, $query); 
           while($row = mysqli_fetch_array($result2)) { 
-            echo "<div class='col-3'><a href='/bookview/book_detail.php?book={$row['id_book']}' >
+            echo "<div class=' col-6  col-lg-3  '><a class='w-100' href='/bookview/book_detail.php?book={$row['id_book']}' >
             <div class='book-card'>
               <div class='book-card__cover'>
                 <div class='book-card__book'>

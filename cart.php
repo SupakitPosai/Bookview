@@ -14,7 +14,7 @@
                 <div class="col-12"><h3>ตะกร้าของฉัน</h3><hr></hr></div>
             </div>
             <div class="row">
-                <div class="col-8">
+                <div class="col-12 col-md-8 mb-3">
                     <div class="cart-list">
                         <?php 
                         // print_r($_SESSION['cart']);
@@ -38,8 +38,8 @@
                                         //     ,"amount"=>$row["amount"],"date_borrow"=>$row["date_borrow"]);
                                         //     array_push($product_cart, $p_c);  
                                         echo "
-                                        <div class='cart-item d-flex align-items-center justify-content-between '>
-                                            <div class='d-flex align-items-center ' >    
+                                        <div class=' row cart-item d-flex align-items-center'>
+                                            <div class='col-12 col-lg-7 d-flex align-items-center ' >    
                                                 <div class='book-detail-img'>
                                                     <img src='/bookview/upload/{$row['image_book']}'/>
                                                 </div> 
@@ -47,10 +47,10 @@
                                                     <h5 class='mb-1'>{$row['name_book']}</h5>
                                                     <h6 class='mb-1'>{$row['name_author']}</h6>
                                                     <p class='mb-1'>จำนวนที่มี : {$row['amount']}</p>
-                                                    <p class='mb-1'>จำนวนที่ยืมได้: {$row['date_borrow']} วัน</p>
+                                                    <p class='mb-1'>ยืมได้: {$row['date_borrow']} วัน</p>
                                                 </div>
                                             </div>
-                                            <div class='cart-q'>
+                                            <div class='col-6 col-lg-3 mt-2 mt-lg-0 cart-q'>
                                                 <div class='input-group input-group-number'>
                                                    <a href='/bookview/function/fn_cart.php?id_book={$row['id_book']}&edit=1&val=-1'> <input type='button' class='button button-minus' data-id='108' data-field='quantity' 
                                                     ";
@@ -73,7 +73,7 @@
                                                     ></input></a>
                                                 </div>
                                             </div>
-                                            <div class='mr-5' >
+                                            <div class='col-6 col-lg-2 mt-2 mt-lg-0' >
                                                 <a href='/bookview/function/fn_cart.php?id_book={$row['id_book']}&delete=1'><p class='del-cart '><i class='fas fa-trash'></i></p></a>
                                             </div>
                                         </div>
@@ -100,7 +100,7 @@
                         
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-md-4 mb-3">
                     <div class="cart-list">
                         <h4>รายละเอียด</h4>
                         <hr></hr>

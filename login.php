@@ -1,7 +1,7 @@
 
 <?php 
 include "function/db_config.php";
-session_start();
+if (session_id()) session_start();
 if (isset($_SESSION['user_id'])){
   header('Location:/bookview');
 }
@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
     // output data of each row
+    session_start(); 
     while($row = $result->fetch_assoc()) {
       
       $_SESSION['user_id']=$row["id_user"];
@@ -52,8 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    <div class="main-body ">
         <div class="container mt-5 pt-5">
             
-            <div class="row p-5">
-                <div class="col-12 p-5">
+            <div class="row mt-3 pb-3 p-lg-5">
+                <div class="col-12 mt-3 p-lg-5">
                     <div class="card-login">
                     <form  method="post" action="/bookview/login.php">
                         <h4 class="text-center">เข้าสู่ระบบ</h4>

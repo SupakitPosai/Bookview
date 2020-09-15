@@ -12,10 +12,10 @@
     <div class="main-body min-vh-100">
         <div class="container mt-5 pt-5 ">
            <div class="row">
-                <div class="col-4">
+                <div class="col-12 col-md-4 pb-3">
                     <?php include("component/menu.php")?>
                 </div>
-                <div class="col-8">
+                <div class="col-12 col-md-8">
                     <?php 
                         if(isset($_GET["success"])){
                             echo "
@@ -55,13 +55,13 @@
                             <h5>จัดการข้อมูลส่วนตัว</h5>
                             <hr></hr>
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-12 col-md-4">
                                 <div class='image-cropper border-0 profile mr-2'>
                                     <img src='<?=$profile?>' class='rounded' id="img-profile" />
                                     </div>
                                     <input type='file' name='profile' id='profile' class='form-control mt-3' accept='image/*'   />
                                 </div>
-                                <div class="col-8">
+                                <div class="col-12 col-md-8">
                                     <div class="row">
                                         <div class="col-6">
                                             <label>ชื่อ</label>

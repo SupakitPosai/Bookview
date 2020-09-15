@@ -50,7 +50,7 @@
                               $t2 ="float-right";
                               $t3 ="float-left";
                               $t4 =$_SESSION['name'];
-                              $t5 =$_SESSION['profile'];
+                              $t5 =$_SESSION['profile'] ? $_SESSION['profile'] :' /bookview/images/icon_user.png';
                             }
                             
                             echo"
@@ -123,7 +123,8 @@
               xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                   // console.log('this.responseText', this.responseText)
-                  if (this.responseText) {
+                 
+                  if (this.responseText ) {
                     const tmp =this.responseText;
                     msgDCM.innerHTML = tmp
                     msgDCM.scrollTop = msgDCM.scrollHeight;
@@ -177,7 +178,7 @@
                    " <span class='direct-chat-name float-right'><?=$_SESSION['name']?></span>"+
                    " <span class='direct-chat-timestamp float-left'>"+date1+"</span>"+
                  " </div>"+
-                " <img class='direct-chat-img' src='<?=$_SESSION['profile']?>' alt='Message User Image'>"+
+                " <img class='direct-chat-img' src='<?= $_SESSION['profile'] ? $_SESSION['profile'] :' /bookview/images/icon_user.png'?>' alt='Message User Image'>"+
                  " <div class='direct-chat-text'>"+
                  msgTxt+
                  " </div>"+

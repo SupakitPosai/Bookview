@@ -9,7 +9,7 @@
   </head>
   <body>
    <?php include("component/header.php")?>
-   <div class="container mt-5 pt-5 pb-4">
+   <div class="container mt-5 pt-5 pb-4 min-vh-100">
       <div class="row">
         
         <?php 
@@ -19,7 +19,7 @@
           FROM book WHERE status='1' AND name_book LIKE '%{$search}%'" or die("Error:" . mysqli_error()); 
           $result2 = mysqli_query($conn, $query); 
           while($row = mysqli_fetch_array($result2)) { 
-            echo "<div class='col-3'><a href='/bookview/book_detail.php?book={$row['id_book']}' >
+            echo "<div class=' col-6 col-md-4  col-lg-3 '><a href='/bookview/book_detail.php?book={$row['id_book']}' >
             <div class='book-card'>
               <div class='book-card__cover'>
                 <div class='book-card__book'>

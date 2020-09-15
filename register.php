@@ -11,8 +11,8 @@
 
    <div class="main-body ">
         <div class="container mt-5 pt-5">
-            <div class="row p-5">
-                <div class="col-12 p-5">
+            <div class="row p-md-5">
+                <div class="col-12 p-3 p-md-5">
                     <div class="card-login">
                       <form action="/bookview/function/fn_register.php" method="post">
                           <h4 class="text-center">ลงทะเบียนสมาชิกใหม่</h4>

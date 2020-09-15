@@ -11,10 +11,10 @@
     <div class="main-body min-vh-100">
         <div class="container mt-5 pt-5 ">
            <div class="row">
-                <div class="col-4">
+                <div class="col-12 col-md-4 pb-3">
                     <?php include("component/menu.php")?>
                 </div>
-                <div class="col-8">
+                <div class="col-12 col-md-8">
                     <div class="cart-list">
                         <h5>รายการยืมหนังสือ</h5>
                         <hr></hr>
@@ -33,7 +33,7 @@
                                 echo "<div class='order-list mb-3'>
                                 <div class='order-list-head'>
                                     <div class='row'>
-                                        <div class='col-6'>
+                                        <div class='col-12 col-md-6'>
                                            <a href='/bookview/order-detail.php?id_order={$row['no_order']}'> <p class='m-0'>รหัสการยืม #{$row['no_order']}</p></a>
                                             <p class='m-0'>ยืมหนังสือวันที่ 
                                             <script type='text/javascript'>   
@@ -55,7 +55,7 @@
                                             </script>
                                             </p>
                                         </div>
-                                        <div class='col-6 d-flex justify-content-end align-items-center '>
+                                        <div class='col-12 col-md-6 d-flex justify-content-end align-items-center '>
                                             สถานะ : ".chSt($row['status_order'])."
                                         </div>
                                     </div>
@@ -70,8 +70,8 @@
                                 if (mysqli_num_rows($result2) > 0) {
                                     while($row2 = mysqli_fetch_assoc($result2)) {
                                         echo "
-                                        <div class='cart-item d-flex align-items-center justify-content-between '>
-                                            <div class='d-flex align-items-center ' >    
+                                        <div class='row cart-item d-flex align-items-center justify-content-between '>
+                                            <div class='col-12 col-lg-7 d-flex align-items-center ' >    
                                                 <div class='book-detail-img'>
                                                     <img src='/bookview/upload/{$row2['image_book']}'/>
                                                 </div> 
@@ -99,7 +99,7 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div class='cart-q'>
+                                            <div class='col-8 col-lg-3 mt-2 mt-lg-0 cart-q'>
                                                 จำนวน {$row2['amount_order']}
                                             </div>
                                             

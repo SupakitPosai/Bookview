@@ -1,4 +1,6 @@
-<?php  session_start();?>
+<?php  
+    session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,6 +18,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/bookview/css/bookview.css" />
+    <link rel="stylesheet" href="/bookview/css/responsive.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -29,16 +32,17 @@
       <div class="container">
         <div class="row w-100">
           <div class="col-2 align-items-center d-flex">
-            <a class="navbar-brand" href="/bookview">Bookview Logo</a>
+            <a class="navbar-brand" href="/bookview">Logo</a>
           </div>
           <div class="col-6 d-flex align-items-center px-0">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav d-none d-lg-flex">
               <li id="navhome" class="nav-item w-100">
                 <a class="nav-link" href="/bookview"><i class="fas fa-home mr-2"></i>หน้าหลัก</a>
               </li>
             </ul>
+            
            <form action="search.php" method="get"> 
-             <div class="input-group  ml-4">
+             <div class="input-group  ml-4 d-none d-md-flex ">
               <input
                 type="text"
                 name="search"
@@ -51,8 +55,9 @@
                   <i class="fas fa-search"></i>
                 </button>
               </div>
+             </div>  
             </form>
-            </div>
+           <a class="d-flex d-md-none ml-4" href="/bookview/search.php?search="><i class="fas fa-search"></i></a>
           </div>
           <div class="col-4 d-flex align-items-center px-0 justify-content-end">
             
@@ -61,7 +66,9 @@
               <?php
                    
                     if(!isset($_SESSION['user_id'])) {
-                      echo'<a class="nav-link" href="/bookview/login.php"><i class="fas fa-user mr-2"></i>เข้าสู่ระบบ</a>';
+                      echo'<a class="nav-link d-flex align-items-center" href="/bookview/login.php"><i class="fas fa-user mr-2"></i>
+                      <span class="d-none d-md-flex">เข้าสู่ระบบ</span>
+                      </a>';
                     }else {
                         if(isset($_SESSION['profile'])){
                           $pro="
@@ -75,7 +82,7 @@
                         }
                       echo"<div class='dropdown'>
                         <button type='button' class='btn  dropdown-toggle d-flex align-items-center' data-toggle='dropdown'>".$pro."
-                      {$_SESSION['name']}
+                     <span class='d-none d-md-flex'> {$_SESSION['name']}</span>
                       </button>
                       <div class='dropdown-menu'>
 
@@ -89,7 +96,7 @@
                 
               </li>
             </ul>
-            <a class="ml-3" href="/bookview/cart.php">
+            <a class="ml-3 d-flex align-items-center" href="/bookview/cart.php">
                 <i class="fas fa-shopping-cart"></i>
                 (<?php 
                     if(isset($_SESSION['cart'])){

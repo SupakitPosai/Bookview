@@ -179,7 +179,7 @@
                     $tyy2 ="float-left";
                     $tyy3 ="float-right";
                     $tyy4 =$rowyy["first_name"]." ".$rowyy["last_name"];
-                    $tyy5 =$rowyy['profile'];
+                    $tyy5 =$_SESSION['profile'] ? $_SESSION['profile'] :' /bookview/images/icon_user.png';
                     
                 }
                 

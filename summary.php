@@ -10,9 +10,9 @@
     <?php include("component/header.php")?>
     <div class="min-vh-100 " >
         <div class="container mt-5 pt-5 pb-4">
-            <div class="row px-5 my-3">
-                <div class="col-12 px-5">
-                    <ul class="progressbar pl-5 pr-5">
+            <div class="row px-lg-5 my-3">
+                <div class="col-12 px-lg-5">
+                    <ul class="progressbar pl-lg-5 pr-lg-5">
                         <?php 
                         
                             if (isset($_GET["success"])) {
@@ -31,8 +31,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="row pl-5 pr-5">
-                <div class="col-12 pl-5 pr-5">
+            <div class="row pl-lg-5 pr-lg-5">
+                <div class="col-12 pl-lg-5 pr-lg-5">
                     <div class="cart-list">
                         <?php 
                             if(isset($_GET["order"]) && $_GET["order"]=="yes"){
@@ -66,8 +66,8 @@
                                         //     ,"amount"=>$row["amount"],"date_borrow"=>$row["date_borrow"]);
                                         //     array_push($product_cart, $p_c);  
                                             echo "
-                                            <div class='cart-item d-flex align-items-center justify-content-between '>
-                                                <div class='d-flex align-items-center ' >    
+                                            <div class='row cart-item d-flex align-items-center justify-content-between '>
+                                                <div class='col-12 col-lg-7 d-flex align-items-center ' >    
                                                     <div class='book-detail-img'>
                                                         <img src='/bookview/upload/{$row['image_book']}'/>
                                                     </div> 
@@ -78,9 +78,9 @@
                                                         <p class='mb-1'>จำนวนที่ยืมได้: {$row['date_borrow']} วัน</p>
                                                     </div>
                                                 </div>
-                                                <div class='cart-q'>
+                                                <div class='col-8 col-lg-3 mt-2 mt-lg-0 cart-q'>
                                             
-                                            วันที่คืน : 
+                                                    วันที่คืน : 
                                                     
         
                                                 <script type='text/javascript'>
@@ -103,7 +103,7 @@
                                                 </script>
                                                 
                                                 </div>
-                                                <div class='mr-5' >
+                                                <div class='col-4 col-lg-2 mt-2 mt-lg-0' >
                                                     จำนวน {$_SESSION['cart'][$x2]['num']}
                                                 </div>
                                             </div>

@@ -42,10 +42,10 @@ if (isset($_GET["total"])&&$_GET["total"]>0) {
     <div class="main-body min-vh-100">
         <div class="container mt-5 pt-5 pb-4">
            <div class="row">
-                <div class="col-4">
+                <div class="col-12 col-md-4 pb-3">
                     <?php include("component/menu.php")?>
                 </div>
-                <div class="col-8">
+                <div class="col-12 col-md-8">
                     <div class="cart-list">
                         <h5>รายละเอียดการยืมหนังสือ</h5>
                         <hr></hr>
@@ -61,7 +61,7 @@ if (isset($_GET["total"])&&$_GET["total"]>0) {
 
                                 echo "
                                 <div class='row'>
-                                    <div class='col-6'>
+                                    <div class='col-12 col-md-6'>
                                         <p class='m-0'>รหัสการยืม #{$row['no_order']}</p>
                                         <p class='m-0'>ยืมหนังสือวันที่ <script type='text/javascript'>   
                                             function tDays(days) {
@@ -80,7 +80,7 @@ if (isset($_GET["total"])&&$_GET["total"]>0) {
                                         </script>
                                         </p>
                                     </div>
-                                    <div class='col-6 text-right '>
+                                    <div class='col-12 col-md-6 text-right '>
                                        <p class='m-0'> สถานะ : ".chSt($row['status_order'])."</p>";
                                     if (isset($row['fines_order'])&&$row['fines_order']>0) {
                                         echo " 
@@ -111,8 +111,8 @@ if (isset($_GET["total"])&&$_GET["total"]>0) {
                                 if (mysqli_num_rows($result2) > 0) {
                                     while($row2 = mysqli_fetch_assoc($result2)) {
                                         echo "
-                                        <div class='cart-item d-flex align-items-center justify-content-between '>
-                                            <div class='d-flex align-items-center ' >  ";
+                                        <div class='row cart-item d-flex align-items-center justify-content-between '>
+                                            <div class='col-12 col-lg-6 d-flex align-items-center ' >  ";
                                                 if ($row2['status_order_detail'] == '00') {
                                                     echo "<div class='mr-3'>
                                                         <div class='custom-control custom-checkbox w-0'>
@@ -152,10 +152,10 @@ if (isset($_GET["total"])&&$_GET["total"]>0) {
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div class='cart-q'>
+                                            <div class='col-4  col-lg-2 mt-2 mt-lg-0 cart-q'>
                                                 จำนวน {$row2['amount_order']}
                                             </div>
-                                            <div class='mr-5' >
+                                            <div class=' col-8 col-lg-4 mt-2 mt-lg-0' >
                                                 สถานะ : ".chSt($row2['status_order_detail'])."
                                             </div>
                                         </div>
