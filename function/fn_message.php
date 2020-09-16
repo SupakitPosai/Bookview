@@ -132,7 +132,7 @@
                         $t2 ="float-right";
                         $t3 ="float-left";
                         $t4 =$_SESSION['name'];
-                        $t5 =$_SESSION['profile'];
+                        $t5 =$_SESSION['profile'] ? $_SESSION['profile'] :' /bookview/images/icon_user.png';
                       }
                       
                       $divvv .="<div class='direct-chat-msg ".$t1."'>".
@@ -179,7 +179,7 @@
                     $tyy2 ="float-left";
                     $tyy3 ="float-right";
                     $tyy4 =$rowyy["first_name"]." ".$rowyy["last_name"];
-                    $tyy5 =$_SESSION['profile'] ? $_SESSION['profile'] :' /bookview/images/icon_user.png';
+                    $tyy5 =$rowyy['profile'] ? $rowyy['profile'] :' /bookview/images/icon_user.png';
                     
                 }
                 

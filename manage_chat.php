@@ -23,10 +23,11 @@
                    $result = mysqli_query($conn, $sql); 
                    if (mysqli_num_rows($result) > 0) { 
                      while($row = mysqli_fetch_assoc($result)) {
+                       $img_ = $row["profile"] ?  $row["profile"] : ' /bookview/images/icon_user.png';
                          echo "<a href='/bookview/manage_chat.php?room={$row["id_chat_room"]}'>
                             <div class='d-flex align-items-center click'>
                             <div class='image-cropper border-0 profile admin'>
-                                <img src='{$row["profile"]}' class='rounded' />
+                                <img src='{$img_}' class='rounded' />
                             </div>
                             <div class='d-flex justify-content-between w-100 align-items-center ml-2' >
                                 <div  >
@@ -77,7 +78,7 @@
                                             $t2 ="float-left";
                                             $t3 ="float-right";
                                             $t4 =$row2["first_name"]." ".$row2["last_name"];
-                                            $t5 =$row2['profile'];
+                                            $t5 =$row2["profile"] ?  $row2["profile"] : ' /bookview/images/icon_user.png';
                                            
                                         }
                                         
