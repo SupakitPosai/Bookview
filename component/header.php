@@ -32,21 +32,21 @@
       <div class="container">
         <div class="row w-100">
           <div class="col-2 align-items-center d-flex">
-            <a class="navbar-brand" href="/bookview">Logo</a>
+            <a class="navbar-brand" href="/bookview"><img class="logo" src="/bookview/logo/logo.png"></a>
           </div>
           <div class="col-6 d-flex align-items-center px-0">
             <ul class="navbar-nav d-none d-lg-flex">
               <li id="navhome" class="nav-item w-100">
-                <a class="nav-link" href="/bookview"><i class="fas fa-home mr-2"></i>หน้าหลัก</a>
+                <a class="nav-link font-20" href="/bookview"><i class="fas fa-home mr-2"></i>หน้าหลัก</a>
               </li>
             </ul>
             
            <form action="search.php" method="get"> 
-             <div class="input-group  ml-4 d-none d-md-flex ">
+             <div class="input-group w-280  ml-4 d-none d-md-flex ">
               <input
                 type="text"
                 name="search"
-                class="form-control"
+                class="form-control font-20"
                 placeholder="ค้นหาหนังสือ...."
                 value="<?php if(isset($_GET['search'])) echo $_GET['search']?>"
               />
@@ -57,7 +57,7 @@
               </div>
              </div>  
             </form>
-           <a class="d-flex d-md-none ml-4" href="/bookview/search.php?search="><i class="fas fa-search"></i></a>
+           <a class="d-flex d-md-none ml-5 pl-4 font-20" href="/bookview/search.php?search="><i class="fas fa-search"></i></a>
           </div>
           <div class="col-4 d-flex align-items-center px-0 justify-content-end">
             
@@ -66,7 +66,7 @@
               <?php
                    
                     if(!isset($_SESSION['user_id'])) {
-                      echo'<a class="nav-link d-flex align-items-center" href="/bookview/login.php"><i class="fas fa-user mr-2"></i>
+                      echo'<a class="nav-link d-flex align-items-center font-20" href="/bookview/login.php"><i class="fas fa-user mr-2"></i>
                       <span class="d-none d-md-flex">เข้าสู่ระบบ</span>
                       </a>';
                     }else {
@@ -82,7 +82,7 @@
                         }
                       echo"<div class='dropdown'>
                         <button type='button' class='btn  dropdown-toggle d-flex align-items-center' data-toggle='dropdown'>".$pro."
-                     <span class='d-none d-md-flex'> {$_SESSION['name']}</span>
+                     <span class='d-none d-md-flex font-20'> {$_SESSION['name']}</span>
                       </button>
                       <div class='dropdown-menu'>
 
@@ -96,7 +96,7 @@
                 
               </li>
             </ul>
-            <a class="ml-3 d-flex align-items-center" href="/bookview/cart.php">
+            <a class="d-flex align-items-center font-20" href="/bookview/cart.php">
                 <i class="fas fa-shopping-cart"></i>
                 (<?php 
                     if(isset($_SESSION['cart'])){

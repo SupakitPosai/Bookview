@@ -834,3 +834,12 @@ a:hover {
   .click{
       cursor: pointer;
   }
+.logo{
+  width: 100px;
+}
+.font-20{
+  font-size: 20px;
+}
+.w-280{
+  width: 280px;
+}
